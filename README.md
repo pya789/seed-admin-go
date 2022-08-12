@@ -50,7 +50,7 @@ seed-admin是一个纯粹的、完全开源的高可维护权限管理系统，�
 <a href="https://admin.seed-app.com/" target="blank"><img src="https://code-admin-1258623672.cos.ap-beijing.myqcloud.com/demo.png"  alt="seed home" /></a>
 
 ## 项目关联仓库
-Vue3前端：[https://github.com/seed-app/seed-admin-vue](https://github.com/seed-app/seed-admin-vue)
+Vue3前端：[https://github.com/seed-app/seed-admin-vue](https://github.com/seed-app/seed-admin-vue)  
 Go服务端：[https://github.com/seed-app/seed-admin-go](https://github.com/seed-app/seed-admin-go)  
 C#服务端：[https://github.com/seed-app/seed-admin-dotnet](https://github.com/seed-app/seed-admin-dotnet) (开发中...)
 
