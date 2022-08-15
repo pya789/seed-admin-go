@@ -7,14 +7,14 @@ import (
 )
 
 const (
-	SUCCESS            = 1000 // 通用成功
-	FAIL               = 1001 // 通用失败 前端会自动抛出异常
+	SUCCESS            = 1000 // 请求成功 进入前端处理逻辑
+	FAIL               = 1001 // 请求错误 前端会自动抛出异常
 	REFRESH_CAPTCHA    = 1002 // 需要前端手动判断code == 1002处理的失败
-	AUTHORIZATION_FAIL = 1004 // 鉴权失败
+	AUTHORIZATION_FAIL = 1004 // 鉴权失败 前端会自动抛出异常并退出登录
 )
 
 // 自定义通用消息
-func Message(c *gin.Context, status int, message string, data ...any) {
+func Message(ctx *gin.Context, status int, message string, data ...any) {
 	var obj gin.H
 	if len(data) == 0 {
 		obj = gin.H{
@@ -28,81 +28,81 @@ func Message(c *gin.Context, status int, message string, data ...any) {
 			"data":    data[0],
 		}
 	}
-	c.JSON(http.StatusOK, obj)
+	ctx.JSON(http.StatusOK, obj)
 }
 
 // 默认的成功响应
-func Ok(c *gin.Context) {
+func Ok(ctx *gin.Context) {
 	obj := gin.H{
 		"code":    SUCCESS,
 		"message": "操作成功",
 	}
-	c.JSON(http.StatusOK, obj)
+	ctx.JSON(http.StatusOK, obj)
 }
 
 // 携带消息的成功响应
-func OkMsg(c *gin.Context, message string) {
+func OkMsg(ctx *gin.Context, message string) {
 	obj := gin.H{
 		"code":    SUCCESS,
 		"message": message,
 	}
-	c.JSON(http.StatusOK, obj)
+	ctx.JSON(http.StatusOK, obj)
 }
 
 // 携带数据的成功响应
-func OkData(c *gin.Context, data any) {
+func OkData(ctx *gin.Context, data any) {
 	obj := gin.H{
 		"code":    SUCCESS,
 		"message": "操作成功",
 		"data":    data,
 	}
-	c.JSON(http.StatusOK, obj)
+	ctx.JSON(http.StatusOK, obj)
 }
 
 // 携带消息和数据的成功响应
-func OkMsgData(c *gin.Context, message string, data any) {
+func OkMsgData(ctx *gin.Context, message string, data any) {
 	obj := gin.H{
 		"code":    SUCCESS,
 		"message": message,
 		"data":    data,
 	}
-	c.JSON(http.StatusOK, obj)
+	ctx.JSON(http.StatusOK, obj)
 }
 
 // 默认的失败响应
-func Fail(c *gin.Context) {
+func Fail(ctx *gin.Context) {
 	obj := gin.H{
 		"code":    FAIL,
 		"message": "操作失败",
 	}
-	c.JSON(http.StatusOK, obj)
+	ctx.JSON(http.StatusOK, obj)
 }
 
 // 携带消息的失败响应
-func FailMsg(c *gin.Context, message string) {
+func FailMsg(ctx *gin.Context, message string) {
 	obj := gin.H{
 		"code":    FAIL,
 		"message": message,
 	}
-	c.JSON(http.StatusOK, obj)
+	ctx.JSON(http.StatusOK, obj)
 }
 
 // 携带数据的失败响应
-func FailData(c *gin.Context, data any) {
+func FailData(ctx *gin.Context, data any) {
 	obj := gin.H{
 		"code":    FAIL,
 		"message": "操作失败",
 		"data":    data,
 	}
-	c.JSON(http.StatusOK, obj)
+	ctx.JSON(http.StatusOK, obj)
 }
 
 // 携带消息和数据的失败响应
-func FailMsgData(c *gin.Context, message string, data any) {
+func FailMsgData(ctx *gin.Context, message string, data any) {
 	obj := gin.H{
 		"code":    FAIL,
 		"message": message,
 		"data":    data,
 	}
-	c.JSON(http.StatusOK, obj)
+	ctx.JSON(http.StatusOK, obj)
 }
