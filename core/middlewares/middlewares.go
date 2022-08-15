@@ -5,7 +5,7 @@ import (
 )
 
 func Load(r *gin.Engine) {
-	useRecovery(r)
-	useLogger(r)
-	useCors(r)
+	UseRecovery(r)
+	UseLogger(r)
+	// useCors(r)
 }

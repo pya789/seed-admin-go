@@ -10,7 +10,7 @@
   server = "127.0.0.1" #数据库地址
   port = 3306 #端口
   user = "root" #帐号
-  password = "123456" #密码
+  password = "123123asd" #密码
   database = "seed-admin" #库
   config = "" #杂项配置
   maxIdleConns = 2 #连接池的空闲数大小

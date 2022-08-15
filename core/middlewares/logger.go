@@ -9,7 +9,7 @@ import (
 )
 
 // // zap接管gin日志(有需要自行加载)
-// func useZapLogger(r *gin.Engine) {
+// func UseZapLogger(r *gin.Engine) {
 // 	logger := common.LOG
 // 	r.Use(func(ctx *gin.Context) {
 // 		start := time.Now()
@@ -27,7 +27,7 @@ import (
 // 		)
 // 	})
 // }
-func useLogger(r *gin.Engine) {
+func UseLogger(r *gin.Engine) {
 	var loggerConfig = gin.LoggerConfig{
 		Output: &lumberjack.Logger{
 			Filename:   "./" + common.CONFIG.String("gin_log.director") + "/http.log",

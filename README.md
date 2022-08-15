@@ -4,6 +4,7 @@
 <h1 align="center" style="font-weight: 600;font-size:36px;">Seed - Admin</h1>
 <h4 align="center" style="font-weight: 200;">基于Go/C#(开发中)/Vue的前后端分离后台权限管理系统 </h4>
 <div align="center" style="margin-top:10px;">
+  <a href="https://gitee.com/seed-app/seed-admin-vue"><img src="https://gitee.com/seed-app/seed-admin-vue/badge/star.svg?theme=dark"></a>
 	<a href="https://github.com/seed-app/seed-admin-vue"><img src="https://img.shields.io/github/stars/seed-app/seed-admin-vue"></a>
 	<a href="https://github.com/seed-app/seed-admin-vue/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue"></a>
   <a href="https://github.com/seed-app/seed-admin-vue"><img src="https://img.shields.io/badge/version-v1.0.0-blue"></a>
@@ -49,10 +50,14 @@ seed-admin是一个纯粹的、完全开源的高可维护权限管理系统，�
 
 <a href="https://admin.seed-app.com/" target="blank"><img src="https://code-admin-1258623672.cos.ap-beijing.myqcloud.com/demo.png"  alt="seed home" /></a>
 
-## 项目关联仓库
+## 项目关联仓库(GitHub)
 Vue3前端：[https://github.com/seed-app/seed-admin-vue](https://github.com/seed-app/seed-admin-vue)  
 Go服务端：[https://github.com/seed-app/seed-admin-go](https://github.com/seed-app/seed-admin-go)  
 C#服务端：[https://github.com/seed-app/seed-admin-dotnet](https://github.com/seed-app/seed-admin-dotnet) (开发中...)
+## 项目关联仓库(Gitee)
+Vue3前端：[https://gitee.com/seed-app/seed-admin-vue](https://gitee.com/seed-app/seed-admin-vue)  
+Go服务端：[https://gitee.com/seed-app/seed-admin-go](https://gitee.com/seed-app/seed-admin-go)  
+C#服务端：[https://gitee.com/seed-app/seed-admin-dotnet](https://gitee.com/seed-app/seed-admin-dotnet) (开发中...)
 
 ## 学(kai)习(che)交(mo)流(yu)群
 企鹅1群：8455822

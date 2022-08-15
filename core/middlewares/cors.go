@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func useCors(r *gin.Engine) {
+func UseCors(r *gin.Engine) {
 	r.Use(func(c *gin.Context) {
 		method := c.Request.Method
 		origin := c.Request.Header.Get("Origin")
