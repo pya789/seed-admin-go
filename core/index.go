@@ -5,7 +5,7 @@ import (
 	"net/http"
 	routers "seed-admin/app"
 	common "seed-admin/common"
-	config "seed-admin/core/configuration"
+	config "seed-admin/core/config"
 	middlewares "seed-admin/core/middlewares"
 	redis "seed-admin/core/redis"
 	xorm "seed-admin/core/xorm"
@@ -17,7 +17,7 @@ import (
 
 // 初始化
 func Run() {
-	common.CONFIG = config.AddConfig()
+	common.CONFIG = config.Add()
 	common.LOG = log.AddZap()
 	common.DB = xorm.AddXorm()
 	common.Redis = redis.AddGoRedis()
@@ -38,6 +38,8 @@ func Run() {
 		当前版本:V1.0.0
 	    QQ交流1群：8455822
 	`)
+	common.LOG.Info("滑稽")
+	common.LOG.Error("错误的滑稽")
 	// 冲
 	app.Run(":" + common.CONFIG.String("app.port"))
 }

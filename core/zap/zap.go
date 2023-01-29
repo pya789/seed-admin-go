@@ -18,6 +18,7 @@ func AddZap() *zap.Logger {
 	if common.CONFIG.Bool("log.showLine") {
 		options = append(options, zap.AddCaller())
 	}
+	// 如果日志等级为Debug/Error等级时显示堆栈信息
 	if level() == zap.DebugLevel || level() == zap.ErrorLevel {
 		options = append(options, zap.AddStacktrace(level()))
 	}
@@ -50,7 +51,6 @@ func encoder(isConsole bool) zapcore.Encoder {
 		return zapcore.NewJSONEncoder(encoderConfig(isConsole))
 	}
 	return zapcore.NewConsoleEncoder(encoderConfig(isConsole))
-
 }
 
 func encoderConfig(isConsole bool) zapcore.EncoderConfig {
@@ -88,6 +88,8 @@ func writerSyncerConfig() zapcore.WriteSyncer {
 	}
 	return zapcore.AddSync(lumberJackLogger)
 }
+
+// 获取配置里的日志等级
 func level() zapcore.Level {
 	l := new(zapcore.Level)
 	err := l.UnmarshalText([]byte(common.CONFIG.String("log.level")))

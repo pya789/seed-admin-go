@@ -1,70 +1,67 @@
 [app]
-  mode = "debug" #运行环境 开发-debug 线上-release 测试-test  
-  name = "Seed-Admin" #应用名称
-  port = 8080 #运行端口
-  staticPath = "/wwwroot" #静态目录
-  #盐值在生产模式使用后切勿随意更改 随意更改后会造成前后盐值不同算出的MD5值也不同导致用户无法登录
-  md5Salt = "seed" #MD5盐值
+mode = "debug"          #运行环境 开发-debug 线上-release 测试-test  
+name = "Seed-Admin"     #应用名称
+port = 8080             #运行端口
+staticPath = "/wwwroot" #静态目录
+#盐值在生产模式使用后切勿随意更改 随意更改后会造成前后盐值不同算出的MD5值也不同导致用户无法登录
+md5Salt = "seed" #MD5盐值
 
 [mysql]
-  server = "127.0.0.1" #数据库地址
-  port = 3306 #端口
-  user = "root" #帐号
-  password = "123123asd" #密码
-  database = "seed-admin" #库
-  config = "" #杂项配置
-  maxIdleConns = 2 #连接池的空闲数大小
-  maxOpenConns = 0 #最大打开连接数 0为无限制
+server = "127.0.0.1"    #数据库地址
+port = 3306             #端口
+user = "root"           #帐号
+password = "123123asd"  #密码
+database = "seed-admin" #库
+config = ""             #杂项配置
+maxIdleConns = 2        #连接池的空闲数大小
+maxOpenConns = 0        #最大打开连接数 0为无限制
 
 [redis]
-  server = "127.0.0.1" #地址
-  port = 6379 #端口
-  password = "123123" #密码
-  database = 0 #库
+server = "127.0.0.1" #地址
+port = 6379          #端口
+password = "123123"  #密码
+database = 0         #库
 
 [jwt]
-  signingKey = "seed"
-  Issuer = "seed-admin"
-  ExpireSeconds = 604800 #token过期时间(second)
+signingKey = "seed"
+Issuer = "seed-admin"
+ExpireSeconds = 604800 #token过期时间(second)
 
 [captcha]
-  len = 4 #验证码位数 修改后记得修改login参数的tag位数验证
-  height = 80 #图片高度
-  width = 200 #图片宽度
+len = 4     #验证码位数 修改后记得修改login参数的tag位数验证
+height = 80 #图片高度
+width = 200 #图片宽度
 
 [upload]
-  fileSize = 5 #上传文件的大小(MB)
-  path = "/uploads"
+fileSize = 5      #上传文件的大小(MB)
+path = "/uploads"
 
 [log]
-  level = "info" #日志等级 debug || info || warn || error || dpanic || panic || fatal
-  showLine = true #是否显示行 
-  outType = "all" #输出位置 console || file || all (console:输出到控制台 file:输出到日志文件 all:我全都要.jpg)
-  console_format = "console" #输出到控制台时的输出格式 json || console
-  file_format = "json" #输出到文件时的输出格式 json || console
-  director = "log/runtime" #日志输出目录
-  maxSize = 1 #切割大小(单位:mb)
-  maxBackups = 10 #保留旧日志文件的最大数目(个)
-  maxAge = 7 #保留旧日志文件的最大天数
-  compress = false #是否压缩
+level = "info"             #日志等级 debug || info || warn || error || dpanic || panic || fatal
+showLine = true            #是否显示行 
+outType = "all"            #输出位置 console || file || all (console:输出到控制台 file:输出到日志文件 all:我全都要.jpg)
+console_format = "console" #输出到控制台时的输出格式 json || console
+file_format = "json"       #输出到文件时的输出格式 json || console
+director = "log/runtime"   #日志输出目录
+maxSize = 1                #切割大小(单位:mb)
+maxBackups = 10            #保留旧日志文件的最大数目(个)
+maxAge = 7                 #保留旧日志文件的最大天数
+compress = false           #是否压缩
 
 [gin_log]
-  outType = "all" #输出位置 console || file || all (console:输出到控制台 file:输出到日志文件 all:我全都要.jpg)
-  director = "log/http" #日志输出目录
-  maxSize = 1 #切割大小(单位:mb)
-  maxBackups = 10 #保留旧日志文件的最大数目(个)
-  maxAge = 7 #保留旧日志文件的最大天数
-  compress = false #是否压缩
-  
+outType = "all"       #输出位置 console || file || all (console:输出到控制台 file:输出到日志文件 all:我全都要.jpg)
+director = "log/http" #日志输出目录
+maxSize = 1           #切割大小(单位:mb)
+maxBackups = 10       #保留旧日志文件的最大数目(个)
+maxAge = 7            #保留旧日志文件的最大天数
+compress = false      #是否压缩
+
 [xorm_log]
-  level = "warn" #日志等级 debug || info || warn || error
-  outType = "console" #输出位置 console || file (console:输出到控制台 file:输出到日志文件)
-  showSql = true #在日志记录器上显示SQL语句(debug级别大于info时生效)
-  director = "log/db" #日志输出目录
-  maxSize = 1 #切割大小(单位:mb)
-  maxBackups = 10 #保留旧日志文件的最大数目(个)
-  maxAge = 7 #保留旧日志文件的最大天数
-  compress = false #是否压缩
-
-
-
+level = "warn"      #日志等级 debug || info || warn || error
+outType = "console" #输出位置 console || file (console:输出到控制台 file:输出到日志文件)
+showSql = true      #在日志记录器上显示SQL语句(debug级别大于info时生效)
+director = "log/db" #日志输出目录
+maxSize = 1         #切割大小(单位:mb)
+maxBackups = 10     #保留旧日志文件的最大数目(个)
+maxAge = 7          #保留旧日志文件的最大天数
+compress = false    #是否压缩
